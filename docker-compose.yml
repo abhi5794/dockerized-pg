@@ -5,9 +5,8 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=ny_taxi
-      - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - "D:\\Project\\pgsdata:/var/lib/postgresql:rw"
+      - "/home/admin-2/Project/pgsdata:/var/lib/postgresql/data:rw"
     ports:
       - "5432:5432"
   pgadmin:
@@ -16,6 +15,6 @@ services:
       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
       - PGADMIN_DEFAULT_PASSWORD=root
     volumes:
-      - "D:\\\Project\\pgAdmin:/var/lib/pgadmin:rw"
+      - "/home/admin-2/Project/pgAdmin:/var/lib/pgadmin:rw"
     ports:
       - "8080:80"
