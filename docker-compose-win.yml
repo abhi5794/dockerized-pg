@@ -1,0 +1,21 @@
+services:
+  pgdatabase:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=ny_taxi
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - "D:\\Project\\pgsdata:/var/lib/postgresql:rw"
+    ports:
+      - "5432:5432"
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    volumes:
+      - "D:\\\Project\\pgAdmin:/var/lib/pgadmin:rw"
+    ports:
+      - "8080:80"
